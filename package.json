@@ -2,9 +2,9 @@
   "name": "phiprepweb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/phiprep/web/issues"
   },
-  "homepage": "https://github.com/phiprep/web#readme"
+  "homepage": "https://github.com/phiprep/web#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "lenis": "^1.3.21"
+  }
 }

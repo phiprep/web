@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* ==== HTML PROPERTIES ==== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+  --accent-color: #888;
+  --ghost-text-color: #1C1C1C;
+  --font-main: 'Open Sans', sans-serif;
+  font-size: 8px;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+p {
+  color: var(--accent-color);
+}
+
+/* ==== HELPFUL FUNCTIONS ==== */
+.hidden {
+    opacity: 0;
+    display: none;
+    z-index: -9999;
+    position: absolute;
+}
+
+/* ===== LINKS ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ===== IMAGES ===== */
+img {
+  display: block;
+}
+
+/* ==== NAVIGATION BAR ==== */
+nav {
+    width: 100%;
+    height: 8vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+}
+
+#logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.navigation-bar {
+    width: 40%;
+    height: 60%;
+    font-size: 2.4rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 1rem;
+}
+
+/* ==== MAIN CONTENT ==== */
+main {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10rem;
+}
+
+#homeSection {
+    height: 100vh;
+}
+
+#blockOne,
+#blockTwo {
+    flex: 1;
+}
+
+#blockOne {
+    position: relative;
+    height: 100%; 
+}
+
+#blockOne img {
+    width: 60%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    margin-left: 12rem;
+}
+
+#gridOne {
+    z-index: 901;
+    top: 0;
+    left: 0;
+}
+
+#headerImage {
+    z-index: 902;
+    left: 6%;
+    top: 6%;
+    min-width: 70%;
+}
+
+#gridTwo {
+    z-index: 901;
+    left: 24%;
+    top: 12%;
+}
+
+#blockTwo {
+    position: relative;
+    height: 100%; 
+}
+
+.contentContainer {
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    left: 10%;
+    top: 16%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 802;
+}
+
+#mainHeading {
+    color: var(--text-color);
+    font-size: 10rem;
+    font-weight: 1000;
+    line-height: 1;
+    letter-spacing: -6px;
+}
+
+#subHeading {
+    font-size: 2rem;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+#cta > marquee {
+    width: 20%;
+    direction: rtl;
+    behavior: alternate;
+}
+
+.ghostText {
+    color: var(--ghost-text-color);
+    font-size: 20rem;
+    font-weight: 800;
+    position: absolute;
+    z-index: 801;
+}
+
+#G1 {
+    top: 6%;
+}
+
+#G2 {
+    bottom: 0;
+    left: 4%;
+}
+
+#G3 {
+    right: 2%;
+    bottom: 0;
+    writing-mode: sideways-lr;
+    font-size: 12rem;
+}
+
+.extraButtons {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    gap: 2rem;
+}
+
+#socials,
+#demo {
+    border: 0.4rem solid black;
+    background-color: white; 
+    border-radius: 4rem;
+    height: 100%;
+    width: 20%;
+    padding: 0 2rem;
+    font-size: 2rem;
+    outline: 0.4rem solid white;
+}
+
+/* ==== WHY US SECTION ==== */
+
+#whyUsSection {
+    flex-direction: column;
+}
+
+#mainHeading {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#mainHeading h1 {
+    font-size: 20rem;
+    font-weight: 1000;
+}
+
+#inverterPart {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    position: relative;
+}
+
+#inverterPart > #inverterRectangle {
+    height: 100%; 
+    width: 0px; 
+    background-color: white; 
+    mix-blend-mode: difference;
+    position: absolute;
+    transition: 1s ease;
+}
+
+/* ==== HORIZONTAL LINE ==== */
+#whyUsSection > hr {
+    width: 90%;
+    border-radius: 10px;
+    margin: 2rem 0;
+    height: fit-content;
+}
+
+/* ==== STICKY WRAPPER ==== */
+
+.stickyWrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
+    display: flex; /* you can use flex HERE */
+}
+
+/* ==== WHYUS CONTENT SECTION ==== */
+#content {
+    width: 100%;
+    height: 400vh;
+}
+
+#block1 {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 4rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+/* ==== REASONS FORMATTING ==== */
+.reasons {
+    font-size: 2rem;
+    margin-left: 40rem;
+    color: var(--ghost-text-color);
+    gap: 4rem;
+    display: flex;
+    flex-direction: row;
+    transition: 0.5s ease;
+}
+
+.paragraphs > h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.paragraphs > p {
+    color: var(--ghost-text-color);
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.pointRectangle {
+    height: 16px;
+    width: 16px;
+    background-color: var(--ghost-text-color);
+    margin-top: 1rem;
+}
+
+.activeParagraph > h1{
+    color: white;
+    font-size: 6rem;
+}
+
+.activeParagraph > p {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.activePointRectangle {
+    background-color: #8BAE66;
+    height: 24px;
+    width: 24px;
+    margin-top: 1.6rem;
+}
+
+@keyframes activateReason {
+    0% {
+        opacity: 0.1;
+        filter: blur(6px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.activeReason {
+    animation: activateReason 0.8s ease forwards;
+}
+
+
+#block2 {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: sticky;
+}
+
+#block2 > h1 {
+    margin-bottom: 2rem;
+    color: #8BAE66
+}
+
+.imageContainer {
+    width: 100%;
+    height: 80vh;
+
+    transform-style: preserve-3d;
+    perspective: 1200px;
+
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes blurIn {
+    0% {
+        opacity: 0;
+        filter: blur(12px);
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+@keyframes blurOut {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.4;
+        filter: blur(8px);
+        transform: scale(0.85);
+    }
+}
+
+.item {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    transform:
+        rotateY(calc((var(--position) - 1) * 90deg))
+        translateZ(-300px)
+        scale(0.6);
+    will-change: transform, opacity, filter;
+}
+
+.item.active {
+    animation: blurIn 0.6s ease forwards;
+    z-index: 2;
+}
+
+.item.inactive {
+    animation: blurOut 0.6s ease forwards;
+    z-index: 1;
+}
+
+.item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.white-recBG {
+    z-index: -2;
+    height: 72%;
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    left: 32%;
+    bottom: 24%;
+    scale: 2;
+}
+
+/* ==== TESTIMONIALS SECTION ==== */
+#testimonials {
+    height: 300vh;
+    width: 100%;
+    position: relative;
+    background: url("../../assets/textures/testimoan.svg") no-repeat center top;
+    background-size: 100vw;
+    margin-bottom: 0;
+}
+
+/* .textureBG {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.textureBG > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+} */
+
+.cardContainer {
+    top: 0;
+    height: 100%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid white;
+    background-color: black;
+    height: 72vh;   
+    max-width: 28vw;
+    border-radius: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.card1 {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.card > .cardNumberDiv { 
+    position: absolute;
+    right: 4%;
+    top: 4%;
+}
+
+.card > .cardNumberDiv > h1 {
+    font-size: 16rem;
+    font-weight: 1000;
+    color: var(--ghost-text-color);
+}
+
+.card > .cardReviewer {
+    position: absolute;
+    bottom: 4%;
+    left: 8%;
+}
+
+.card > .cardReviewer > h3{
+    font-size: 2rem;
+    font-weight: 1000;
+    color: white;
+}
+
+.cardReview {
+    height: fit-content;
+    width: 80%;
+}
+
+.cardReview > p {
+    font-size: 2rem;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+
+.card2 {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+}
+
+.card3 {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: end;
+}
+
+.active {
+    animation: blurIn 0.6s ease forwards;
+}
+
+.inactive {
+    animation: blurOut 0.6s ease forwards;
+}
+
+/* ==== ABOUT US PAGE ==== */
+
+
+/* ==== PAGE SETTINGS ==== */
+#aboutusSection {
+    height: 500vh;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 4rem;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* ==== CANVAS SETTINGS ==== */
+#aboutUsCanvas {
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: -1;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+}
+
+#heroSection {
+    height: 100vh;
+    width: 100%;
+
+    margin-top: 20rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 6rem;
+
+}
+
+/* ==== TEXTS AND IMAGES ==== */
+#pageName {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 4rem;
+    text-align: center;
+}
+
+#heroSection > #mainHeading {
+    width: 60%;
+    font-size: 12rem;
+    font-weight: 1000;
+    text-align: center;
+    letter-spacing: -1rem;
+    margin: 0 auto;
+}
+
+#heroSection > #headerImage {
+    height: 70%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#heroSection > #headerImage > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ==== AIMS SECTION ==== */
+#aimsSection {
+    height: 100vh;
+    width: 100%;
+
+    border: 2px solid red;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aimsSection > .mainHeadingsDiv {
+    height: 50%;
+    width: 50%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-content: center;
+
+    border: 2px solid blue;
+}
+
+#aimsSection > .mainHeadingsDiv > #mainHeadings1 {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+}
+
+#aimsSection > .mainHeadingsDiv > #mainHeadings2 {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+    
+}
+
+#aimsSection > .mainHeadingsDiv > #mainHeadings3 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#aimsSection > .mainHeadingsDiv > #mainHeadings4 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#aimsSection > .mainHeadingsDiv > h1 {
+    font-size: 8rem;
+    font-weight: 100;
+}
